@@ -28,8 +28,10 @@ end
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'rmagick'
+gem 'paperclip'
 
-
+gem 'simple_form'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
