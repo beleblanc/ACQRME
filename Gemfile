@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'rmagick'
 gem 'paperclip'
+gem 'qrencoder'
 
 gem 'simple_form'
 gem 'jquery-rails'

@@ -32,6 +32,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    chunky_png (1.2.5)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -102,6 +103,8 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
+    qrencoder (1.4.1)
+      chunky_png (~> 1.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -177,6 +180,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   paperclip
+  qrencoder
   rails (= 3.2.1)
   rmagick
   rspec-rails (= 2.9.0)

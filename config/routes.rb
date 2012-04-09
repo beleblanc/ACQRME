@@ -1,4 +1,16 @@
 ACQRME::Application.routes.draw do
+  get "details/show"
+
+  get "details/new"
+
+  get "details/edit"
+
+  get "details/create"
+
+  get "details/update"
+
+  get "details/destroy"
+
   get "constant_pages/home"
 
   get "constant_pages/help"
