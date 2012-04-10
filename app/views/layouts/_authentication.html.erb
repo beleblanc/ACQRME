@@ -1,0 +1,9 @@
+<div class="right">
+<%if user_signed_in? %>
+   <p class="small">Signed in as <%= current_user.email %></p>
+   <p class="small">Not you? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %></p>
+<% else %>
+   <%= link_to "Sign in", new_user_session_path  %>
+
+<% end %>
+</div>
