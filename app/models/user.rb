@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-
-
+protected
+  #every new user should have their own subdomain, and qrcode, once qr code is created send it to our
+ #production line email
   def setsubdomain
-
     if User.find_by_subdomain(self.email.to_s.split("@")[0].delete(".")).nil?
       self.subdomain= self.email.split("@")[0].to_s.delete(".")
       createqrcode(self.subdomain)
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def createqrcode(sub)
-    code = QREncoder.encode( "#{sub}.acqrme.dev", {:version => 1, :correction=>:high}).png({:pixels_per_module =>2, :transparent => false})
+    code = QREncoder.encode( "#{sub}.acqrme.dev", {:version => 1, :correction=>:high}).png({:pixels_per_module =>2, :transparent => true})
     code.save("/Users/benoit/RubymineProjects/ACQRME/public/images/qrcode/#{self.subdomain}.png")
     self.qrcode_file_name = "/images/qrcode/#{self.subdomain}.png"
     self.qrcode_content_type="png"

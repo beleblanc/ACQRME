@@ -1,6 +1,8 @@
 class DetailsController < ApplicationController
   def show
-    @details = Details.find(params[:id])
+    @user= User.find_by_subdomain!(request.subdomain)
+
+    @details = @user.details
 
     respond_to do |format|
       format.html

@@ -1,4 +1,7 @@
 ACQRME::Application.routes.draw do
+
+  match '', to: 'details#show', constraints: {subdomain: '/.+/'}
+
   get "details/show"
 
   get "details/new"
@@ -17,7 +20,11 @@ ACQRME::Application.routes.draw do
 
   get "constant_pages/about"
 
+
+
   devise_for :users
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
