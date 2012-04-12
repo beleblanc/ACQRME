@@ -58,6 +58,9 @@
                     <li><%= link_to "Link2", "/path2"  %></li>
                     <li><%= link_to "Link3", "/path3"  %></li>
                 </ul>
+                <%if user_signed_in? %>
+                <%= image_tag current_user.qrcode_file_name %>
+                <% end %>
               </div><!--/.well -->
             </div><!--/span-->
         </div><!--/row-->
